@@ -2,13 +2,12 @@ import React from "react";
 import { Books } from "./books";
 import axios from "axios";
 
-export class Read extends React.Component{
-    
+export class Read extends React.Component{    
 
     componentDidMount() {
-        axios.get('https://jsonblob.com/api/jsonblob/1027219693823606784')
+        axios.get('http://localhost:4000/api/books')
         .then((response)=>{
-            this.setState({books:response.data})
+            this.setState({books:response.data.books})
         })
         .catch((error)=>{
             console.log(error);
